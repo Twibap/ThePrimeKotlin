@@ -1,12 +1,6 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
-
     val number = 101
     println(isPrime(number))
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
 }
 
 // 1보다 큰 수 중에서 1과 자기 자신으로만 나누어 떨어지는 수
@@ -19,7 +13,6 @@ fun isPrime(number: Int): Boolean {
         return false
     else
         for (i in 3..number step(2)) {
-            println("$number % $i is " + number % i)
             if (number % i == 0 && number != i)
                 return false
             if (number % i == 0 && number == i)
