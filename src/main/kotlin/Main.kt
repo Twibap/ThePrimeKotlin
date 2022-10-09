@@ -29,10 +29,8 @@ fun isPrime(number: Int): Boolean {
         return false
 
     val rootOfNumber = sqrt(number.toDouble()).toInt()
-    for (i in 3..rootOfNumber step (2)) {
-        if (number % i == 0)
-            return false
-    }
-
-    return true
+    (3..rootOfNumber step (2))
+        .firstOrNull { number % it == 0 }
+        ?.let { return false }
+        ?: return true
 }
