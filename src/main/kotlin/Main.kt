@@ -2,10 +2,9 @@ fun main(args: Array<String>) {
     val number = args[0].toInt()
     val primeNumbers = (2..number)
         .filter { isPrime(it) }
-        .joinToString()
 
-    println("The Prime number is ...")
-    print(primeNumbers)
+    println("The Prime number Count is ${primeNumbers.size}")
+    print(primeNumbers.joinToString())
 }
 
 // 1보다 큰 수 중에서 1과 자기 자신으로만 나누어 떨어지는 수
