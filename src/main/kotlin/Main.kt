@@ -28,10 +28,8 @@ fun isPrime(number: Int): Boolean {
         return false
     else
         for (i in 3..number step(2)) {
-            if (number % i == 0 && number != i)
-                return false
-            if (number % i == 0 && number == i)
-                return true
+            if (number % i == 0)
+                return number == i
         }
 
     return false
