@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
-    val primeNumbers = args[0].toInt()
-        .downTo(1)
+    val number = args[0].toInt()
+    val primeNumbers = (2..number)
         .filter { isPrime(it) }
         .joinToString()
 
