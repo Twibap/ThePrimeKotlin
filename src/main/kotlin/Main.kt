@@ -1,10 +1,21 @@
+import kotlin.time.ExperimentalTime
+import kotlin.time.TimeSource
+
+@OptIn(ExperimentalTime::class)
 fun main(args: Array<String>) {
     val number = args[0].toInt()
+
+    val mark = TimeSource.Monotonic.markNow()   // for Time check
+
+    println()
+    println("Find Primes under $number")
+
     val primeNumbers = (2..number)
         .filter { isPrime(it) }
 
     println("The Prime number Count is ${primeNumbers.size}")
-    print(primeNumbers.joinToString())
+    println()
+    println(mark.elapsedNow())  // for Time check
 }
 
 // 1보다 큰 수 중에서 1과 자기 자신으로만 나누어 떨어지는 수
