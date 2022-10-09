@@ -11,8 +11,11 @@ fun main(args: Array<String>) {
     println()
     println("Find Primes under $number")
 
-    val primeNumbers = (2..number)
-        .filter { isPrime(it) }
+    val primeNumbers = ArrayList<Int>()
+    for (i in (2..number)) {
+        if (isPrime(i))
+            primeNumbers.add(i)
+    }
 
     println("The Prime number Count is ${primeNumbers.size}")
     println()
