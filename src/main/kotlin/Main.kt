@@ -23,17 +23,16 @@ fun main(args: Array<String>) {
 fun isPrime(number: Int): Boolean {
     if (number < 2)
         return false
-    else if (number == 2)
+    if (number == 2)
         return true
-    else if (number % 2 == 0)
+    if (number % 2 == 0)
         return false
-    else {
-        val rootOfNumber = sqrt(number.toDouble()).toInt()
-        for (i in 3..rootOfNumber step (2)) {
-            if (number % i == 0)
-                return false
-        }
 
-        return true
+    val rootOfNumber = sqrt(number.toDouble()).toInt()
+    for (i in 3..rootOfNumber step (2)) {
+        if (number % i == 0)
+            return false
     }
+
+    return true
 }
