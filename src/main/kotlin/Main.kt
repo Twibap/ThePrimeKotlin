@@ -1,3 +1,4 @@
+import kotlin.math.sqrt
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimeSource
 
@@ -26,11 +27,13 @@ fun isPrime(number: Int): Boolean {
         return true
     else if (number % 2 == 0)
         return false
-    else
-        for (i in 3..number step(2)) {
+    else {
+        val rootOfNumber = sqrt(number.toDouble()).toInt()
+        for (i in 3..rootOfNumber step (2)) {
             if (number % i == 0)
-                return number == i
+                return false
         }
 
-    return false
+        return true
+    }
 }
